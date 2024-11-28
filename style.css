@@ -1,0 +1,164 @@
+* {
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #050505;
+    color: #fff;
+}
+
+
+
+/* Header */
+
+h1 {
+    font-size: 2.5vw;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+
+/* Main Content */
+
+.main-content {
+    width: 45vw;
+    height: 40vh;
+    background-color: #141414;
+    border-radius: 1.25vw;
+    position: relative;
+    left: 27.5%;
+    margin-top: 7.5%;
+    border: 0.1vw solid #424242a6;
+}
+
+.main-content::after, .main-content::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 92.5%, #ffffff);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 0.175vw;
+    border-radius: 1.35vw;
+    animation: 10s spin linear infinite;
+}
+
+.main-content::before {
+    filter: blur(1.25vw);
+    opacity: 0.8;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+
+
+/* Form */
+
+.info {
+    font-size: 1.25vw;
+    color: #ffffff;
+    display: block;
+    margin-top: 7.5%;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 30%;
+    padding: 1.25vw;
+    text-align: center;
+    font-size: 0.76vw;
+    background-color: #202020;
+    border: 0.1vw solid #424242a6;
+    border-radius: 0.4vw;
+    box-sizing: border-box;
+    margin-top: 5%;
+    margin-left: 35.25%;
+    transition: 0.325s;
+    color: #ffffff;
+}
+
+input[type="text"]::placeholder {
+    color: #ffffff41;
+    transition: 0.3s;
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 5vw 0.25vw #ffffff3f;
+    transform: scale(1.075);
+    background-color: #ffffff;
+}
+
+input[type="text"]:not(:hover):not(:focus) {
+    border-color: #424242a6;
+    box-shadow: none;
+    transform: scale(1);
+    background-color: #202020;
+}
+
+input[type="text"]:hover::placeholder, input[type="text"]:focus::placeholder {
+    color: #000;
+}
+
+
+
+/* Resultat */
+
+#age-result {
+    font-size: 1.25vw;
+    color: #ffffff;
+    margin-top: 6vh;
+    text-align: center;
+}
+
+
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    .main-content {
+        width: 95vw;
+        height: 85vh;
+        border-radius: 2.5vw;
+        left: 1%;
+    }
+
+    .info {
+        font-size: 3.75vw;
+        margin-top: 12.5%;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        padding: 2.5vw;
+        font-size: 2.5vw;
+        margin-top: 12.5%;
+        margin-left: 25%;
+    }
+
+    #age-result {
+        font-size: 4vw;
+        margin-top: 10vh;
+    }
+}

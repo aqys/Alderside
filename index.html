@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="kalender.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js" defer></script>
+    <meta name="description" content="Alderberegner - Hjemmeside til at beregne alder.">
+    <title>Alderberegner</title>
+</head>
+<body>
+    <header>
+        <h1>Alderberegner</h1>
+    </header>
+    <div class="main-content">
+        <form id="age-form">
+            <p class="info">Indtast din fødselsdato, for at beregne din alder.</p>
+            <input type="text" id="birthdate" name="birthdate" required placeholder="Klik for at vælge dato" tabindex="0">
+        </form>
+        <p id="age-result"></p>
+    </div>
+</body>
+</html>
